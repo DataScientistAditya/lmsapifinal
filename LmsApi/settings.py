@@ -14,7 +14,7 @@ from pathlib import Path
 from datetime import timedelta
 import os
 from decouple import config
-import dj_database_url
+# import dj_database_url
 # from decouple import config
 
 
@@ -113,8 +113,8 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": ['redis://localhost:6379/4']
-        }
+            "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
+        },
     },
 }
 
