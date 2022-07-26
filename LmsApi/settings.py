@@ -37,7 +37,7 @@ SECRET_KEY = "django-insecure-=3+)=^ckn)-&-r#k0frhn#pul1pzncl-4-9)7r3i8$dz_yi$qi
 # SECURITY WARNING: don't run with debug turned on in production!
 
 #'lmsapibackend.herokuapp.com','143.110.250.89','http://localhost:8000'
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['lmsbackendapis.herokuapp.com']
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 
