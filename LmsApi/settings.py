@@ -132,7 +132,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+db_ffrom_env= dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_ffrom_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -237,7 +238,7 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
 
-db_ffrom_env= dj_database_url.config(conn_max_age=600)
+
 
 
 # DATABASES = {
@@ -250,7 +251,7 @@ db_ffrom_env= dj_database_url.config(conn_max_age=600)
 #         'PORT': '5432',
 #     }
 # }
-DATABASES['default'].update(db_ffrom_env)
+
 # AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 # AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
 # AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
